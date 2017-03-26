@@ -16,7 +16,7 @@
 title: Scott Harrison
 email: s.z.r.harrison@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  This is Scott Harrisons blog on technical topics
+  This is my blog on technical topics
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  szrharrison
