@@ -1,18 +1,22 @@
 ---
 layout: post
-title:  "A Beginners Guide to Git"
+title:  "The Local Git Environment"
 date:   2017-03-28 08:00:00 -0400
 categories: Git
 ---
 ### Don't Panic! It's Confusing for Everyone
 Git is a powerful VCS (Version Control System) that is the industry standard for tracking any and all of the changes that take place on a project. It's utility comes from it's ability to allow team leaders to conveniently manage multiple members contributions and incorporate them into a finished project. Unfortunately, it seems to be designed from the point of view of those team leaders and things can get pretty confusing if you're one of the people doing the contributing.
 
-I know when I first started using git, I had difficulty following exactly what happened when I typed something into my terminal. I didn't understand why I had to `git add` before I `git commit`ed or what the difference between my upstream and origin were. Why was it that when I would `git pull` after having added something to staging would I get an error? What was the difference between `pull` and `fetch`? None of it made any sense and I just tried to follow the workflow that had been outlined, completely unable to troubleshoot.
+I know when I first started using git, I had difficulty following exactly what happened when I typed something into my terminal. I didn't understand why I had to `git add` before I `git commit`ed or what the difference between my upstream and origin were. What was the difference between `pull` and `fetch`? None of it made any sense and I just tried to follow the workflow that had been outlined, completely unable to troubleshoot.
 
 GitHub likes to think that the average git workflow will end up looking something like this:
+
 ![Branching](/assets/images/branching.png)
+
 That may be the case if working with only one or two other people on a small project. However, once you get to a corporate level, working in conjunction with hundreds of other people, things start to look a little more like this:
+
 ![Development Repos](/assets/images/Development-Repos.jpg)
+
 While there's no arguing the necessity of such a complex Development - QA - Production environment, it's downright intimidating when you can't even follow what's happening on your own machine!
 
 ### It's Where You Work
@@ -46,8 +50,6 @@ Next is probably the most confusing part of your local git environment, your **_
 [timestmp] git-practice
 // ♥ touch practice_file
 [timestmp] git-practice
-// ♥ touch deletable_file
-[timestmp] git-practice
 // ♥ git status
 #=> On branch master
 #=>
@@ -56,7 +58,6 @@ Next is probably the most confusing part of your local git environment, your **_
 #=> Untracked files:
 #=>   (use "git add <file>..." to include in what will be committed)
 #=>
-#=> 	deletable_file
 #=> 	practice_file
 #=>
 #=> nothing added to commit but untracked files present (use "git add" to track)
@@ -70,7 +71,6 @@ Next is probably the most confusing part of your local git environment, your **_
 #=> Changes to be committed:
 #=>   (use "git rm --cached <file>..." to unstage)
 #=>
-#=> 	new file:   deletable_file
 #=> 	new file:   practice_file
 {% endhighlight %}
 
@@ -80,8 +80,7 @@ Note that depending on which version of git you are using, `git add .` doesn't n
 [timestmp] git-practice
 // ♥ git commit
 #=> [master (root-commit) bfbd8a2] My initial commit
-#=>  2 files changed, 0 insertions(+), 0 deletions(-)
-#=>  create mode 100644 deletable_file
+#=>  1 file changed, 0 insertions(+), 0 deletions(-)
 #=>  create mode 100644 practice_file
 {% endhighlight %}
 
@@ -108,10 +107,10 @@ Note that `git checkout` will first look in your **_index_**, and then in your *
 
 <img alt="Git Local Repo" src="/assets/images/git-local-repo.png" style="float: left;">
 
-This brings us to the last key element of your local git environment: your **_local repo_**. Your **_local repo_** is your personal source of truth for the project. Any code that lives here should be ready to be shown to the rest of your team. In order to get any code onto your **_local repo_** you need to have written a commit message, so hopefully you were sure that it was a change you wanted to make. In case you change your mind and want to revert back to a previous commit, you can always `git reset --hard <commit hash>`. Note that this is a very powerful command and should only be used for commits that have yet to be pushed to the **_remote repository_** since you are essentially rewriting history. For an overall view of your local git environment, take a look at the image below (I didn't cover the stash in this post because it's not something I see used very often):
+This brings us to the last key element of your local git environment: your **_local repo_**. Your **_local repo_** is your personal source of truth for the project. Any code that lives here should be ready to be shown to the rest of your team. In order to get any code onto your **_local repo_** you need to have written a commit message, so hopefully you were sure that it was a change you wanted to make. In case you change your mind and want to revert back to a previous commit, you can always `git reset --hard <commit hash>`. Note that this is a very powerful command and should only be used for commits that have yet to be pushed to the **_remote repository_** since you are essentially rewriting history. For an overall view of your local git environment, take a look at the image below (_I didn't cover the stash in this post because it's not something I see used very often_):
 
 ![Git Transport](/assets/images/git-transport.png)
 
-And for tips on when and how to beautify your commit history (required sometimes when committing to an open source project) take a look at this image.
+And for tips on when and how to beautify your commit history (required sometimes when committing to an open source project) take a look at this image. (_Note: `git revert` will actually create a new commit in which the changes from the reverted commit are undone as opposed to `git reset` which actually erases the reset commit from your history._)
 
 ![Git Pretty](/assets/images/git-pretty.png)
