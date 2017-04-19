@@ -11,16 +11,16 @@ I know when I first started using git, I had difficulty following exactly what h
 
 GitHub likes to think that the average git workflow will end up looking something like this:
 
-![Branching](/assets/images/branching.png)
+![Branching](/assets/images/a-beginners-guide-to-git/branching.png)
 
 That may be the case if working with only one or two other people on a small project. However, once you get to a corporate level, working in conjunction with hundreds of other people, things start to look a little more like this:
 
-![Development Repos](/assets/images/Development-Repos.jpg)
+![Development Repos](/assets/images/a-beginners-guide-to-git/Development-Repos.jpg)
 
 While there's no arguing the necessity of such a complex Development - QA - Production environment, it's downright intimidating when you can't even follow what's happening on your own machine!
 
 ### It's Where You Work
-<img alt="Git Workspace" src="/assets/images/git-workspace.png" style="float: left;">
+<img alt="Git Workspace" src="/assets/images/a-beginners-guide-to-git/git-workspace.png" style="float: left;">
 
 In order to understand everything that goes on behind the scenes of the git commands you type in your CLI, you first need to understand what the scenes themselves are. On your machine, there are several different areas of memory that git will operate within. First, let's take a look at the one your probably most familiar with: Your **_workspace_**.
 
@@ -42,7 +42,7 @@ You'll notice that this will initialize a **_local repo_** (repository) _inside_
 The **_workspace_** is the place where you'll be doing all of your work. You should feel free to hack and slash apart the code here to your hearts content. If at any point you think you need to undo some of your changes, you can simply `git checkout HEAD` or `git reset --hard` (they do the same thing) and that will change your **_workspace_** back to what is stored in your **_local repo_**.
 
 ### In what?
-<img alt="Git Index" src="/assets/images/git-index.png" style="float: left;">
+<img alt="Git Index" src="/assets/images/a-beginners-guide-to-git/git-index.png" style="float: left;">
 
 Next is probably the most confusing part of your local git environment, your **_index_** (or **_stage_**, or **_cache_**). This is where the files you are about to commit go. Whenever you `git add`, the **_index_** gets populated with whichever files you are adding. Git will use a variety of different words to tell you this (because consistency would be too simple). Below, you can see them refer to the **_index_** in the line `(use "git rm --cached <file>..." to unstage)`. In this example, both `cached` and `unstage` are describing different actions being done on the **_index_**.
 
@@ -105,12 +105,12 @@ Note that `git checkout` will first look in your **_index_**, and then in your *
 
 ### Going Local
 
-<img alt="Git Local Repo" src="/assets/images/git-local-repo.png" style="float: left;">
+<img alt="Git Local Repo" src="/assets/images/a-beginners-guide-to-git/git-local-repo.png" style="float: left;">
 
 This brings us to the last key element of your local git environment: your **_local repo_**. Your **_local repo_** is your personal source of truth for the project. Any code that lives here should be ready to be shown to the rest of your team. In order to get any code onto your **_local repo_** you need to have written a commit message, so hopefully you were sure that it was a change you wanted to make. In case you change your mind and want to revert back to a previous commit, you can always `git reset --hard <commit hash>`. Note that this is a very powerful command and should only be used for commits that have yet to be pushed to the **_remote repository_** since you are essentially rewriting history. For an overall view of your local git environment, take a look at the image below (_I didn't cover the stash in this post because it's not something I see used very often_):
 
-![Git Transport](/assets/images/git-transport.png)
+![Git Transport](/assets/images/a-beginners-guide-to-git/git-transport.png)
 
 And for tips on when and how to beautify your commit history (required sometimes when committing to an open source project) take a look at this image. (_Note: `git revert` will actually create a new commit in which the changes from the reverted commit are undone as opposed to `git reset` which actually erases the reset commit from your history._)
 
-![Git Pretty](/assets/images/git-pretty.png)
+![Git Pretty](/assets/images/a-beginners-guide-to-git/git-pretty.png)
