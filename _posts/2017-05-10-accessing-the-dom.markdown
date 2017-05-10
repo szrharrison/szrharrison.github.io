@@ -187,18 +187,22 @@ This will select all elements with a `title` attribute that contains the word 'f
 document.querySelectorAll('[class|="top"]')
 ```
 
-This will select all elements with a class that starts with the word 'top'
+This will select all elements with a class that starts with the word 'top'.
 
 ```js
 document.querySelectorAll('[class^="top"]')
 ```
-This will select all elements with a class that starts with the characters 'top'
+This will select all elements with a class that starts with the characters 'top'.
 
 ```js
 document.querySelectorAll('[class$="test"]')
 ```
 
+This will select all elements with a class that ends with the characters 'test'.
+
 ```js
 document.querySelectorAll('[class*="te"]')
 ```
-This will select all elements with a class that contains the characters 'te'
+This will select all elements with a class that contains the characters 'te'.
+
+With the use of these selectors and the **element** node properties like `parentNode`, it is possible to select any **element** from any other element. In practice, this is referred to as **traversing the DOM**.
