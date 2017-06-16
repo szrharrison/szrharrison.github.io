@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "The Truth about DPI & PPI"
-date:   2017-05-31 08:00:00 -0400
-categories: css
+date:   2017-06-15 08:00:00 -0400
+categories: CSS
 ---
 For clarity all _units-of-measurement_ will be hyphenated and italicized and all **specific terminology** will be in bold.
 
