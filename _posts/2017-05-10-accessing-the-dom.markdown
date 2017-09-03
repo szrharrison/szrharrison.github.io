@@ -2,7 +2,7 @@
 layout: post
 title:  "Accessing the DOM"
 date:   2017-05-10 08:00:00 -0400
-categories: HTML
+categories: HTML, Javascript
 ---
 # The DOM
 The Document Object Model (or DOM) is a browser's way of representing the content that is rendered on web page. Its main use is providing a way that the web page can be accessed and altered through the programs we write. It represents the structure of the web page using the following many data types, including the following:
