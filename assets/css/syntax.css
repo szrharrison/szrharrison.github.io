@@ -245,3 +245,7 @@
 .highlighter-rouge .highlight table pre {
   margin: 0;
 }
+
+p code.highlighter-rouge {
+  font-style: normal;
+}

@@ -321,4 +321,4 @@ fn instanceof Function
 Snippet 6
 {: .snippet-label}
 
-As you can see, functions are instances of both **Functions** _and_ **Objects**. In order to understand how and why that's the case, we need to explore **prototypes** and **constructors**, which we will cover in [Part 2](/javascript/2017/09/11/types-prototypes-and-constructor-functions-in-javascript-part-2.html).
+As you can see, functions are instances of both **Functions** _and_ **Objects**. In order to understand how and why that's the case, we need to explore **prototypes** and **constructors**, which we will cover in Part 2.
