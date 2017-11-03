@@ -178,6 +178,9 @@ There are also 2 other unintuitive characteristics of the Javascript type system
 >
 > In ordinary arithmetic, `3.2317006071311 * 10 ** 616` is a real finite number, but, by ECMAScript standards, it is simply too large (i.e, considerably greater than `Number.MAX_VALUE`), and is therefore represented as `Infinity`. Attempting to divide an infinity by an infinity yields `NaN`.
 
+For more information on the limits of numbers in javascript, check out [this article](https://modernweb.com/what-every-javascript-developer-should-know-about-floating-points/).
+{: .note}
+
 Because Javascript doesn't allow for numbers over a certain size, it tries to find some other way to represent them. To do this, the "numbers" `NaN` and `Infinity` were added. Checking datatype for these works as follows:
 ```javascript
 Infinity
@@ -321,4 +324,4 @@ fn instanceof Function
 Snippet 6
 {: .snippet-label}
 
-As you can see, functions are instances of both **Functions** _and_ **Objects**. In order to understand how and why that's the case, we need to explore **prototypes** and **constructors**, which we will cover in Part 2.
+As you can see, functions are instances of both **Functions** _and_ **Objects**. In order to understand how and why that's the case, we need to explore **prototypes** and **constructors**, which we will cover in [Part 2](/javascript/2017/11/02/types-prototypes-and-constructor-functions-in-javascript-part-2.html).
